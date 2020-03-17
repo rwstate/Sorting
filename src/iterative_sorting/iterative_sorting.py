@@ -22,15 +22,15 @@ def bubble_sort(arr):
     #     if arr[i] > arr[i + 1]:
     #         arr[i], arr[i + 1] = arr[i + 1], arr[i]
     #         bubble_sort(arr)
-    i = 0
-    while i < len(arr) - 1:
-        print(arr)
-        if arr[i] > arr[i + 1]:
-            arr[i], arr[i + 1] = arr[i + 1], arr[i]
-            i = 0
-            continue
-        i += 1
-    return arr
+    arrCopy = arr[:]
+    for i in range(0, len(arrCopy) - 1):
+      for j in range(0, len(arrCopy) - 1 - i):
+        if arrCopy[j] > arrCopy[j + 1]:
+          arrCopy[j], arrCopy[j + 1] = arrCopy[j + 1], arrCopy[j]
+          
+
+
+    return arrCopy
 
 
 print(bubble_sort([1, 5, 2, 7, 6, 3]))
